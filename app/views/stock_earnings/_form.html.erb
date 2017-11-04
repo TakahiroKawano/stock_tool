@@ -1,0 +1,92 @@
+<%= form_with(model: stock_earning, local: true) do |form| %>
+  <% if stock_earning.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stock_earning.errors.count, "error") %> prohibited this stock_earning from being saved:</h2>
+
+      <ul>
+      <% stock_earning.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :stock_id %>
+    <%= form.number_field :stock_id, id: :stock_earning_stock_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :period %>
+    <%= form.text_field :period, id: :stock_earning_period %>
+  </div>
+
+  <div class="field">
+    <%= form.label :next_kessan %>
+    <%= form.datetime_select :next_kessan, id: :stock_earning_next_kessan %>
+  </div>
+
+  <div class="field">
+    <%= form.label :month_1q %>
+    <%= form.number_field :month_1q, id: :stock_earning_month_1q %>
+  </div>
+
+  <div class="field">
+    <%= form.label :month_2q %>
+    <%= form.number_field :month_2q, id: :stock_earning_month_2q %>
+  </div>
+
+  <div class="field">
+    <%= form.label :month_3q %>
+    <%= form.number_field :month_3q, id: :stock_earning_month_3q %>
+  </div>
+
+  <div class="field">
+    <%= form.label :month_4q %>
+    <%= form.number_field :month_4q, id: :stock_earning_month_4q %>
+  </div>
+
+  <div class="field">
+    <%= form.label :profit_1q %>
+    <%= form.number_field :profit_1q, id: :stock_earning_profit_1q %>
+  </div>
+
+  <div class="field">
+    <%= form.label :profit_2q %>
+    <%= form.number_field :profit_2q, id: :stock_earning_profit_2q %>
+  </div>
+
+  <div class="field">
+    <%= form.label :profit_3q %>
+    <%= form.number_field :profit_3q, id: :stock_earning_profit_3q %>
+  </div>
+
+  <div class="field">
+    <%= form.label :profit_4q %>
+    <%= form.number_field :profit_4q, id: :stock_earning_profit_4q %>
+  </div>
+
+  <div class="field">
+    <%= form.label :forecast_1q %>
+    <%= form.number_field :forecast_1q, id: :stock_earning_forecast_1q %>
+  </div>
+
+  <div class="field">
+    <%= form.label :forecast_2q %>
+    <%= form.number_field :forecast_2q, id: :stock_earning_forecast_2q %>
+  </div>
+
+  <div class="field">
+    <%= form.label :forecast_3q %>
+    <%= form.number_field :forecast_3q, id: :stock_earning_forecast_3q %>
+  </div>
+
+  <div class="field">
+    <%= form.label :forecast_4q %>
+    <%= form.number_field :forecast_4q, id: :stock_earning_forecast_4q %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

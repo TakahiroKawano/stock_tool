@@ -61,10 +61,6 @@ class StocksController < ApplicationController
     end
   end
 
-  def get_stocks_from_csv
-
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_stock

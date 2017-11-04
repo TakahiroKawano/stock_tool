@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_id: 1
+  period: MyString
+  next_kessan: 2017-11-05 03:19:25
+  month_1q: 1
+  month_2q: 1
+  month_3q: 1
+  month_4q: 1
+  profit_1q: 1
+  profit_2q: 1
+  profit_3q: 1
+  profit_4q: 1
+  forecast_1q: 1
+  forecast_2q: 1
+  forecast_3q: 1
+  forecast_4q: 1
+
+two:
+  stock_id: 1
+  period: MyString
+  next_kessan: 2017-11-05 03:19:25
+  month_1q: 1
+  month_2q: 1
+  month_3q: 1
+  month_4q: 1
+  profit_1q: 1
+  profit_2q: 1
+  profit_3q: 1
+  profit_4q: 1
+  forecast_1q: 1
+  forecast_2q: 1
+  forecast_3q: 1
+  forecast_4q: 1

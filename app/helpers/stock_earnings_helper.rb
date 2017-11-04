@@ -1,0 +1,2 @@
+module StockEarningsHelper
+end

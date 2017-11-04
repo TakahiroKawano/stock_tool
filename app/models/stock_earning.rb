@@ -1,0 +1,2 @@
+class StockEarning < ApplicationRecord
+end

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stock Earnings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stock</th>
+      <th>Period</th>
+      <th>Next kessan</th>
+      <th>Month 1q</th>
+      <th>Month 2q</th>
+      <th>Month 3q</th>
+      <th>Month 4q</th>
+      <th>Profit 1q</th>
+      <th>Profit 2q</th>
+      <th>Profit 3q</th>
+      <th>Profit 4q</th>
+      <th>Forecast 1q</th>
+      <th>Forecast 2q</th>
+      <th>Forecast 3q</th>
+      <th>Forecast 4q</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stock_earnings.each do |stock_earning| %>
+      <tr>
+        <td><%= stock_earning.stock_id %></td>
+        <td><%= stock_earning.period %></td>
+        <td><%= stock_earning.next_kessan %></td>
+        <td><%= stock_earning.month_1q %></td>
+        <td><%= stock_earning.month_2q %></td>
+        <td><%= stock_earning.month_3q %></td>
+        <td><%= stock_earning.month_4q %></td>
+        <td><%= stock_earning.profit_1q %></td>
+        <td><%= stock_earning.profit_2q %></td>
+        <td><%= stock_earning.profit_3q %></td>
+        <td><%= stock_earning.profit_4q %></td>
+        <td><%= stock_earning.forecast_1q %></td>
+        <td><%= stock_earning.forecast_2q %></td>
+        <td><%= stock_earning.forecast_3q %></td>
+        <td><%= stock_earning.forecast_4q %></td>
+        <td><%= link_to 'Show', stock_earning %></td>
+        <td><%= link_to 'Edit', edit_stock_earning_path(stock_earning) %></td>
+        <td><%= link_to 'Destroy', stock_earning, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stock Earning', new_stock_earning_path %>
