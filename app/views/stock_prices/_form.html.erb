@@ -1,0 +1,77 @@
+<%= form_with(model: stock_price, local: true) do |form| %>
+  <% if stock_price.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stock_price.errors.count, "error") %> prohibited this stock_price from being saved:</h2>
+
+      <ul>
+      <% stock_price.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :stock_id %>
+    <%= form.number_field :stock_id, id: :stock_price_stock_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.number_field :date, id: :stock_price_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :present %>
+    <%= form.number_field :present, id: :stock_price_present %>
+  </div>
+
+  <div class="field">
+    <%= form.label :opening %>
+    <%= form.number_field :opening, id: :stock_price_opening %>
+  </div>
+
+  <div class="field">
+    <%= form.label :high %>
+    <%= form.number_field :high, id: :stock_price_high %>
+  </div>
+
+  <div class="field">
+    <%= form.label :low %>
+    <%= form.number_field :low, id: :stock_price_low %>
+  </div>
+
+  <div class="field">
+    <%= form.label :volume %>
+    <%= form.number_field :volume, id: :stock_price_volume %>
+  </div>
+
+  <div class="field">
+    <%= form.label :trading %>
+    <%= form.number_field :trading, id: :stock_price_trading %>
+  </div>
+
+  <div class="field">
+    <%= form.label :market_capitalization %>
+    <%= form.number_field :market_capitalization, id: :stock_price_market_capitalization %>
+  </div>
+
+  <div class="field">
+    <%= form.label :per %>
+    <%= form.number_field :per, id: :stock_price_per %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pbr %>
+    <%= form.number_field :pbr, id: :stock_price_pbr %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bps %>
+    <%= form.number_field :bps, id: :stock_price_bps %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

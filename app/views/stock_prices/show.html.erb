@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @stock_price.stock_id %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @stock_price.date %>
+</p>
+
+<p>
+  <strong>Present:</strong>
+  <%= @stock_price.present %>
+</p>
+
+<p>
+  <strong>Opening:</strong>
+  <%= @stock_price.opening %>
+</p>
+
+<p>
+  <strong>High:</strong>
+  <%= @stock_price.high %>
+</p>
+
+<p>
+  <strong>Low:</strong>
+  <%= @stock_price.low %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @stock_price.volume %>
+</p>
+
+<p>
+  <strong>Trading:</strong>
+  <%= @stock_price.trading %>
+</p>
+
+<p>
+  <strong>Market capitalization:</strong>
+  <%= @stock_price.market_capitalization %>
+</p>
+
+<p>
+  <strong>Per:</strong>
+  <%= @stock_price.per %>
+</p>
+
+<p>
+  <strong>Pbr:</strong>
+  <%= @stock_price.pbr %>
+</p>
+
+<p>
+  <strong>Bps:</strong>
+  <%= @stock_price.bps %>
+</p>
+
+<%= link_to 'Edit', edit_stock_price_path(@stock_price) %> |
+<%= link_to 'Back', stock_prices_path %>

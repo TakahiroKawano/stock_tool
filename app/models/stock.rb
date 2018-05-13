@@ -1,46 +1,31 @@
 class Stock < ApplicationRecord
   require 'open-uri'
-  require 'csv'
 
-  ### logic ###
   def self.get_stocks_from_web
-    url = 'http://k-db.com'
-    path = './tmp/stocks_csv/'
-    doc = Nokogiri::HTML(open(url + '/stocks'))
-    link_file = doc.xpath('//*[@id="downloadlink"]/a')[0].attribute('href').value
-    open(path + 'stocks.csv', 'wb') do |output|
-      open(url + link_file) do |data|
-        output.write(data.read)
-      end
-    end
-
-    stocks_csv_file = Dir::entries(path).find{|f| f.match(/^stocks\.csv$/)}
-    stocks_csv = CSV.read(path + stocks_csv_file)
-
-    stocks_csv.each_with_index do |row, i|
-      # skip header
-      if i == 0 or  i == 1
-        next
-      end
-
-      stocks = Hash.new
-      stocks[:code] = row[0][0,4]
-      stocks[:name] = row[1]
-      # stocks[:category] = ''
-      stocks[:market] = row[2]
-
-      @stock = Stock.new(stocks)
-      if @stock.save
-        # create
-      else
-        # update
-        @stock = @stock.find_by(code: stocks[:code])
-        if @stock.update(stocks)
-          # success
-        else
-          # fail
+    host = 'https://m.finance.yahoo.co.jp/'
+    begin
+      (13..99).each do |i|
+        doc = Nokogiri::HTML(open(host + '/search?q=' + i.to_s + '&type=c'))
+        sleep 3
+        result_codes = doc.xpath('//*[@id="results"]/li')
+        if result_codes.blank?
+          raise '証券情報取得失敗'
         end
+
+        stocks = Array.new
+        result_codes.each do |result_code|
+          stock = Hash.new
+          stock[:name] = result_code.css('.title').inner_text
+          stock[:code] = result_code.css('.subText').inner_text.match(/\w{4}/)[0]
+          stock[:market] = result_code.css('.subText').inner_text.match(/（(.+)）/)[1]
+
+          stocks << stock
+        end
+
+        Stock.import stocks
       end
+    rescue => e
+      StockMailer.error_email(__method__, e).deliver_now
     end
   end
 

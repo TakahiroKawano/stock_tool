@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Stock Prices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Stock</th>
+      <th>Date</th>
+      <th>Present</th>
+      <th>Opening</th>
+      <th>High</th>
+      <th>Low</th>
+      <th>Volume</th>
+      <th>Trading</th>
+      <th>Market capitalization</th>
+      <th>Per</th>
+      <th>Pbr</th>
+      <th>Bps</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stock_prices.each do |stock_price| %>
+      <tr>
+        <td><%= stock_price.stock_id %></td>
+        <td><%= stock_price.date %></td>
+        <td><%= stock_price.present %></td>
+        <td><%= stock_price.opening %></td>
+        <td><%= stock_price.high %></td>
+        <td><%= stock_price.low %></td>
+        <td><%= stock_price.volume %></td>
+        <td><%= stock_price.trading %></td>
+        <td><%= stock_price.market_capitalization %></td>
+        <td><%= stock_price.per %></td>
+        <td><%= stock_price.pbr %></td>
+        <td><%= stock_price.bps %></td>
+        <td><%= link_to 'Show', stock_price %></td>
+        <td><%= link_to 'Edit', edit_stock_price_path(stock_price) %></td>
+        <td><%= link_to 'Destroy', stock_price, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Stock Price', new_stock_price_path %>

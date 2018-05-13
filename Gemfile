@@ -52,3 +52,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'activerecord-import'
+gem 'mechanize'
+gem 'nokogiri', '~> 1.8.2'

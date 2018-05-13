@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stock_id: 1
+  date: 1
+  present: 1
+  opening: 1
+  high: 1
+  low: 1
+  volume: 1
+  trading: 1
+  market_capitalization: 1
+  per: 1
+  pbr: 1
+  bps: 1
+
+two:
+  stock_id: 1
+  date: 1
+  present: 1
+  opening: 1
+  high: 1
+  low: 1
+  volume: 1
+  trading: 1
+  market_capitalization: 1
+  per: 1
+  pbr: 1
+  bps: 1
